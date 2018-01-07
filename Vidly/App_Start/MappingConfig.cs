@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Vidly.Models;
 
 namespace Vidly
@@ -10,6 +11,8 @@ namespace Vidly
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Customer, Customer>();
+                cfg.CreateMap<Movie, Movie>()
+                .ForMember(x => x.DateAdded, opt => opt.Ignore());
             });
         }
     }
