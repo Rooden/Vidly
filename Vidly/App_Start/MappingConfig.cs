@@ -15,6 +15,10 @@ namespace Vidly
                 cfg.CreateMap<Customer, CustomerDto>()
                 .ForMember(c => c.Id, opt => opt.Ignore());
 
+                cfg.CreateMap<MovieDto, Movie>();
+                cfg.CreateMap<Movie, MovieDto>()
+                    .ForMember(c => c.Id, opt => opt.Ignore());
+
                 cfg.CreateMap<Customer, Customer>();
                 cfg.CreateMap<Movie, Movie>()
                 .ForMember(x => x.DateAdded, opt => opt.Ignore());
