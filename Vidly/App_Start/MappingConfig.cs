@@ -11,8 +11,9 @@ namespace Vidly
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Customer, CustomerDto>();
                 cfg.CreateMap<CustomerDto, Customer>();
+                cfg.CreateMap<Customer, CustomerDto>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
 
                 cfg.CreateMap<Customer, Customer>();
                 cfg.CreateMap<Movie, Movie>()
