@@ -23,6 +23,7 @@ namespace Vidly
                 cfg.CreateMap<Movie, Movie>()
                 .ForMember(x => x.DateAdded, opt => opt.Ignore());
 
+                cfg.CreateMap<MembershipType, MembershipTypeDto>();
                 cfg.CreateMap<Movie, MovieFormViewModel>();
             });
         }
